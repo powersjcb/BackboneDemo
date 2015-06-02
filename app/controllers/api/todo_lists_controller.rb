@@ -20,13 +20,13 @@ class Api::TodoListsController < ApplicationController
 
   def index
     @todo_lists = TodoList.all
-    render json: @todo_lists
+    render "index"
   end
 
   def show
     @todo_list = TodoList.find(params[:id])
     @todo_list_items = @todo_list.todo_list_items
-    render json: @todo_list
+    render 'show'
   end
 
   def update
